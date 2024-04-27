@@ -1,0 +1,85 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+        font-family: 'Abel';
+}
+.logo{
+    font-family: 'Kelly Slab';
+    text-align: center;
+    margin:20px;
+    padding:5px;
+    height: 38px;
+    width: 140px;
+    font-size: 27px;
+    padding: 0 10px;
+    border: 2px solid black;
+    outline: none;
+}
+
+header{
+    font-size:30px;
+    text-align: center;
+}
+
+.container{
+    margin-top:100px;
+    margin-right:200px;
+    display:flex;
+    align-items:right;
+    justify-content: right;
+    min-height:90vh;
+}
+
+.box{
+    background: #fdfdfd;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 25px;
+    box-shadow: 0 0 100px 0 rgb(148, 98, 169),
+                 0 32px 64px -48px rgba(148, 98, 169);
+}
+.form-box{
+    background-color: rgb(186, 172, 247);
+    height:400px;
+    width: 500px;
+    margin: 0px 10px;
+}
+.form-box form .input input{
+    height: 40px;
+    width: 400px;
+    font-size: 16px;
+    padding: 0 10px;
+    border-radius:30px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+.form-box form .field{
+    margin-top: 20px;
+    align-items: center;
+    display:flex;
+    margin-bottom: 10px;
+    flex-direction:column;
+    outline: none;
+}
+.btn-login{
+    width: 100px;
+    color:white;
+    height: 35px;
+    background-color:rgb(73, 4, 103);
+    border:0;
+    border-radius:30px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all .3s;
+    margin-top: 10px;
+    padding:0px 10px;
+}
+.submit{
+    width: 100%;
+}
+.links{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
