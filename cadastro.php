@@ -46,19 +46,89 @@
         </div>
 
         <div class="field1 input1">
-            <label for ="password" >Confirmar senha</label>
-            <input type="password" name="password" id="password" required>
+            <label for ="senha" >Confirmar senha</label>
+            <input type="password" name="senha" id="senha" required>
 
         </div>
 
         <div class="field1">
-            <input type="submit" class="btn-login1" name="submit" value="Cadastrar" required>
+            <input type="submit" class="btn-login1" name="enviar" value="Cadastrar" required>
         </div>
         <div class="links1">
-            Já possui uma conta? <a href="login.html">Login</a>
+            Já possui uma conta? <a href="login.php">Login</a>
         </div>
     </form>
     </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <script>
+  function validarForm() {
+    var nome = document.getElementById('nome').value;
+    var email = document.getElementById('email').value;
+    var senha = document.getElementById('senha').value;
+
+    if (nome === '' ||  email === '' || senha === '') {
+      alert('Por favor, preencha todos os campos.');
+      return false;
+    }
+
+    return true;
+  }
+</script>
+
 </body>
+
+<?php 
+error_reporting (0);
+ 
+ include("conexao.php");
+ 
+// RECEBENDO OS DADOS PREENCHIDOS DO FORMULÁRIO !
+$nome	= $_POST ["nome"];
+$email = $_POST ["email"];
+$senha = $_POST ["senha"];
+$enviar = $_POST ["enviar"];
+
+
+//Gravando no banco de dados !
+ 
+//conectando com o localhost - mysql
+
+if (isset($_POST['enviar'])){
+    // removes backslashes
+$query = "SELECT * FROM `usuario` WHERE email='$email'";
+$result = mysqli_query($conect,$query);
+$rows = mysqli_num_rows($result);
+
+    if($rows==0){
+
+        $query = "INSERT INTO usuario (cod, nome , email,senha) 
+        VALUES ('NULL','$nome', '$email' , '$senha')";
+         
+        $query = mysqli_query($conect,$query);
+        
+        echo "<script>
+        alert('Seu cadastro foi cadastrado com sucesso!');
+        window.location='login.php';
+        </script>";
+   
+     }else{
+
+        echo "<script>
+alert('E-mail já é cadastrado!');
+window.location='cadastro.php';
+</script>";
+
+}
+
+
+}
+	
+
+
+?> 
+
 </html>

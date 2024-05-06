@@ -38,25 +38,79 @@
         <div class="box form-box">
             
     <header>LOGIN</header>
-    <form action="" method="post">
+    <form method="post" onsubmit="return validarForm()">
         <div class="field input">
             <label for="email">E-mail</label>
             <input type="text" name="email" id="email" required>
 
         </div>
         <div class="field input">
-            <label for ="password" >Senha</label>
-            <input type="password" name="password" id="password" required>
+            <label for ="senha" >Senha</label>
+            <input type="password" name="senha" id="senha" required>
 
         </div>
         <div class="field">
-            <input type="submit" class="btn-login" name="submit" value="login" required>
+            <input type="submit" class="btn-login" name="enviar" value="login" required>
         </div>
         <div class="links">
-            Você não tem uma conta? <a href="cadastro.html">Cadastre-se</a>
+            Você não tem uma conta? <a href="cadastro.php">Cadastre-se</a>
         </div>
     </form>
     </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <script>
+  function validarForm() {
+    var email = document.getElementById('email').value;
+    var senha = document.getElementById('senha').value;
+
+    if (email === '' || senha === '') {
+      alert('Por favor, preencha todos os campos.');
+      return false;
+    }
+
+    // Aqui você pode adicionar a lógica para autenticação com o backend
+
+    return true;
+  }
+</script>
+
+<?php
+
+error_reporting();
+/// session_start inicia a sessão 
+require('conexao.php');
+session_start();
+$email = $_POST['email'];
+$senha = $_POST['senha'];
+// If form submitted, insert values into the database.
+if (isset($_POST['entrar'])){
+        // removes backslashes
+	        $query = "SELECT * FROM `usuario` WHERE email='$email'
+and senha='".$senha."'";
+	$result = mysqli_query($conect,$query);
+	$rows = mysqli_num_rows($result);
+	
+        if($rows==1){
+			  $_SESSION['email'] = $email;
+            // Redirect user to index.php
+	    header("Location: portalaluno.php");
+         }else{
+
+	echo "<script>
+  alert('Não possível entrar: E-mail ou senha estão errados, ou não existe!Seu Peste!');
+  window.location='login.php';
+  </script>";
+
+	}
+	
+	
+}
+?>
+
+
 </body>
 </html>
