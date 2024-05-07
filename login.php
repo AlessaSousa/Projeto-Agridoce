@@ -6,15 +6,15 @@
     <title>AGRIDOCE</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Abel&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Abel&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Kelly+Slab&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Kelly+Slab&display=swap" rel="stylesheet">
 </head>
 <body>    
   
@@ -53,7 +53,8 @@
             <input type="submit" class="btn-login" name="enviar" value="login" required>
         </div>
         <div class="links">
-            Você não tem uma conta? <a href="cadastro.php">Cadastre-se</a>
+            Você não tem uma conta? <a href="cadastro.php">Cadastre-se</a><br>
+            Esqueceu a senha? <a href="alterarSenha.php">Alterar senha</a>
         </div>
     </form>
     </div>
@@ -63,7 +64,7 @@
     <script src="assets/js/bootstrap.min.js"></script>
 
     <script>
-  function validarForm() {
+    function validarForm() {
     var email = document.getElementById('email').value;
     var senha = document.getElementById('senha').value;
 
@@ -97,13 +98,13 @@ and senha='".$senha."'";
         if($rows==1){
 			  $_SESSION['email'] = $email;
             // Redirect user to index.php
-	    header("Location: portalaluno.php");
+	    header("Location: post.php");
          }else{
 
-	echo "<script>
-  alert('Não possível entrar: E-mail ou senha estão errados, ou não existe!Seu Peste!');
-  window.location='login.php';
-  </script>";
+    echo "<script>
+    alert('Não possível entrar: E-mail ou senha estão errados, ou não existe!');
+    window.location='login.php';
+    </script>";
 
 	}
 	

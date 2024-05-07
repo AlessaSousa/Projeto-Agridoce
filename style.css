@@ -15,6 +15,11 @@
     padding: 0 10px;
     border: 2px solid black;
     outline: none;
+
+}
+.logo a{
+    text-decoration: none;
+    color: black;
 }
 p{
     text-align: center;
@@ -44,6 +49,7 @@ header{
     background-color: rgb(186, 172, 247);
     height:400px;
     width: 500px;
+    
     margin: 0px 10px;
 }
 
@@ -163,6 +169,15 @@ header{
     margin-top: 10px;
     padding:0px 10px;
 }
+.message{
+    text-align: center;
+    background: #f9eded;
+    padding: 15px 0px;
+    border:1px solid #699053;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: red;
+}
 .submit1{
     width: 100%;
 }
@@ -170,3 +185,48 @@ header{
     text-align: center;
     margin-bottom: 15px;
 }
+ /*----------------- Perfil ------------*/
+ .nav{
+    position:fixed;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    line-height: 60px;
+    z-index: 100;
+ }
+
+ .right-links{
+    padding: 0 10px;
+ }
+ main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+ }
+ .main-box{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+ }
+ .main-box .top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+ }
+@media only screen and (max-width:840px){
+    .main-box .top{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around; 
+    }
+    .top .box{
+        margin: 10px 10px;
+    }
+    .bottom{
+        margin-top: 0;
+    }
+}
+
+/* ----------------------alterarSenha---------------------------------*/
