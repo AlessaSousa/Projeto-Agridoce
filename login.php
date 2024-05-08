@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AGRIDOCE</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/loginStyle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
@@ -51,6 +51,7 @@
         </div>
         <div class="field">
             <input type="submit" class="btn-login" name="enviar" value="login" required>
+            
         </div>
         <div class="links">
             Você não tem uma conta? <a href="cadastro.php">Cadastre-se</a><br>
@@ -88,16 +89,16 @@ session_start();
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 // If form submitted, insert values into the database.
-if (isset($_POST['entrar'])){
+if (isset($_POST['enviar'])){
         // removes backslashes
 	        $query = "SELECT * FROM `usuario` WHERE email='$email'
 and senha='".$senha."'";
-	$result = mysqli_query($conect,$query);
+	$result = mysqli_query($con,$query);
 	$rows = mysqli_num_rows($result);
 	
         if($rows==1){
 			  $_SESSION['email'] = $email;
-            // Redirect user to index.php
+            // redireciona para o post.php
 	    header("Location: post.php");
          }else{
 

@@ -1,3 +1,4 @@
+
 *{
     margin:0;
     padding:0;
@@ -18,6 +19,7 @@
 
 }
 .logo a{
+    font-family: 'Kelly Slab';
     text-decoration: none;
     color: black;
 }
@@ -49,7 +51,6 @@ header{
     background-color: rgb(186, 172, 247);
     height:400px;
     width: 500px;
-    
     margin: 0px 10px;
 }
 
@@ -115,76 +116,7 @@ header{
     margin-bottom: 15px;
 }
 
-/*----------------CADASTRO----------------*/
 
-.container1{
-    display:flex;
-    align-items:center;
-    justify-content: center;
-    min-height:90vh;
-}
-
-.box1{
-    background: #fdfdfd;
-    display: flex;
-    flex-direction: column;
-    padding: 25px 25px;
-    box-shadow: 0 0 100px 0 rgb(148, 98, 169),
-                 0 32px 64px -48px rgba(148, 98, 169);
-}
-.form-box1{
-    background-color: rgb(186, 172, 247);
-    height:550px;
-    width: 500px;
-    margin: 0px 10px;
-}
-.form-box1 form .input1 input{
-    text-align: center;
-    height: 40px;
-    width: 400px;
-    font-size: 16px;
-    padding: 0 10px;
-    border-radius:30px;
-    border: 1px solid #ccc;
-    outline: none;
-}
-.form-box1 form .field1 {
-    margin-top: 20px;
-    align-items: center;
-    display:flex;
-    margin-bottom: 10px;
-    flex-direction:column;
-    outline: none;
-}
-.btn-login1{
-    width: 100px;
-    color:white;
-    height: 35px;
-    background-color:rgb(73, 4, 103);
-    border:0;
-    border-radius:30px;
-    font-size: 15px;
-    cursor: pointer;
-    transition: all .3s;
-    margin-top: 10px;
-    padding:0px 10px;
-}
-.message{
-    text-align: center;
-    background: #f9eded;
-    padding: 15px 0px;
-    border:1px solid #699053;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    color: red;
-}
-.submit1{
-    width: 100%;
-}
-.links1{
-    text-align: center;
-    margin-bottom: 15px;
-}
  /*----------------- Perfil ------------*/
  .nav{
     position:fixed;
@@ -229,4 +161,4 @@ header{
     }
 }
 
-/* ----------------------alterarSenha---------------------------------*/
+/* ----------------------post---------------------------------*/
