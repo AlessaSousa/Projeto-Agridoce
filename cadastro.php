@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AGRIDOCE</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/cadastroStyle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
@@ -105,7 +105,7 @@ if(isset($_POST['submit'])){
                     
                     <input type="submit" class="btn-login1" name="submit" value="Cadastrar" required>
                 </div>
-                <div class="links">
+                <div class="links1">
                     Já é membro? <a href="login.php">Sign In</a>
                 </div>
             </form>
