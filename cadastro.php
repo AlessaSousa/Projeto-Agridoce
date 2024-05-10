@@ -66,7 +66,7 @@ if(isset($_POST['submit'])){
             echo "<div class='message'>
                       <p>Este e-mail já está cadastrado, use outro por favor!</p>
                   </div> <br>";
-            echo "<a href='javascript:self.history.back()'><button class='btn-login mg'>Volte</button>";
+            echo "<a href='javascript:self.history.back()'><button class='btn-login-mg'>Volte</button>";
         } else {
             mysqli_query($con,"INSERT INTO usuario(nome ,email, senha) VALUES('$nome','$email','$senha')") or die("Houve um erro");
 

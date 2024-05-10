@@ -6,7 +6,6 @@
         font-family: 'Abel';
 }
 .logo{
-    font-family: 'Kelly Slab';
     text-align: center;
     margin-left: 20px ;
     margin-top: 20px;
@@ -32,35 +31,14 @@ header{
     text-align: center;
 }
 
-.container-bv{ 
-    display:flex;
-    align-items:left;
-    justify-content: left;
-    min-height:90vh;
-}
-
-.box-bv{
-
-    background: #fdfdfd;
-    display: inline-block;
-    flex-direction: column;
-    padding: 25px 25px;
-    box-shadow: 0 0 100px 0 rgb(148, 98, 169),
-                 0 32px 64px -48px rgba(148, 98, 169);
-}
-.form-box-bv{
-    background-color: rgb(186, 172, 247);
-    height:400px;
-    width: 500px;
-    margin: 0px 10px;
-}
-
 .container{
-    margin-top:100px;
-    margin-right:250px;
-    display:flex;
-    align-items:right;
-    justify-content: right;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items:center;
+    justify-content: center;
     min-height:90vh;
 }
 

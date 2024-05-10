@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AGRIDOCE</title>
-    <link rel="stylesheet" href="style/indexStyle.css">
+    <link rel="stylesheet" href="style/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
@@ -18,4 +18,22 @@
 </head>
 <body>    
   
-    <div class="logo">AGRIDOCE</div>
+<div class="logo"><a href="index.php">AGRIDOCE</a></div>
+
+    <div class="container"> 
+       <div class="container-bv">
+        <div class="box-bv form-box-bv">
+            <header> BEM VINDO À <br> 
+                AGRIDOCE</header>
+                <br>
+                <br>
+            <p>Nossa missão é conectar pessoas através<br>
+                 do amor pela comida, proporcionando um<br>
+                 espaço acolhedor para explorar, aprender e<br>
+                 celebrar a diversidade cultural e criativa<br>
+                 da culinária. Junte-se a nós e embarque em uma<br>
+                 jornada deliciosa de sabores, texturas e aromas </p>
+        </div>
+        </div>
+</body>
+</html>

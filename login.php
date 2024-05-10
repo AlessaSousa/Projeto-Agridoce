@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AGRIDOCE</title>
-    <link rel="stylesheet" href="style/loginStyle.css">
+    <link rel="stylesheet" href="style/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
@@ -21,20 +21,6 @@
 <div class="logo"><a href="index.php">AGRIDOCE</a></div>
 
     <div class="container"> 
-       <div class="container-bv">
-        <div class="box-bv form-box-bv">
-            <header> BEM VINDO À <br> 
-                AGRIDOCE</header>
-                <br>
-                <br>
-            <p>Nossa missão é conectar pessoas através<br>
-                 do amor pela comida, proporcionando um<br>
-                 espaço acolhedor para explorar, aprender e<br>
-                 celebrar a diversidade cultural e criativa<br>
-                 da culinária. Junte-se a nós e embarque em uma<br>
-                 jornada deliciosa de sabores, texturas e aromas </p>
-        </div>
-        </div>
         <div class="box form-box">
             
     <header>LOGIN</header>
@@ -81,38 +67,39 @@
 </script>
 
 <?php
-
-error_reporting();
-/// session_start inicia a sessão 
+error_reporting(E_ALL); // Adicionei a configuração para exibir todos os erros
 require('conexao.php');
 session_start();
-$email = $_POST['email'];
-$senha = $_POST['senha'];
-// If form submitted, insert values into the database.
-if (isset($_POST['enviar'])){
-        // removes backslashes
-	        $query = "SELECT * FROM `usuario` WHERE email='$email'
-and senha='".$senha."'";
-	$result = mysqli_query($con,$query);
-	$rows = mysqli_num_rows($result);
-	
-        if($rows==1){
-			  $_SESSION['email'] = $email;
-            // redireciona para o post.php
-	    header("Location: post.php");
-         }else{
 
-    echo "<script>
-    alert('Não possível entrar: E-mail ou senha estão errados, ou não existe!');
-    window.location='login.php';
-    </script>";
-
-	}
-	
-	
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['email']) && isset($_POST['senha'])) {
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+        
+        $query = "SELECT * FROM usuario WHERE email='$email' AND senha='$senha'";
+        $result = mysqli_query($con, $query);
+        $rows = mysqli_num_rows($result);
+        
+        if ($rows == 1) {
+            $_SESSION['email'] = $email;
+            header("Location: post.php");
+            exit(); // Adicionei exit para encerrar o script após o redirecionamento
+        } else {
+            echo "<script>
+                alert('Não foi possível entrar: E-mail ou senha estão errados, ou não existe!');
+                window.location='login.php';
+                </script>";
+            exit(); // Encerra o script após o redirecionamento
+        }
+    } else {
+        echo "<script>
+            alert('Por favor, preencha todos os campos.');
+            window.location='login.php';
+            </script>";
+        exit(); // Encerra o script após o redirecionamento
+    }
 }
 ?>
-
 
 </body>
 </html>

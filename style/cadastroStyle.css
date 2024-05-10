@@ -31,7 +31,11 @@ header{
     text-align: center;
 }
 .container1{
-    display:flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
     align-items:center;
     justify-content: center;
     min-height:90vh;
@@ -83,13 +87,24 @@ header{
     padding:0px 10px;
 }
 .message{
+    margin-top: 150px;
     text-align: center;
-    background: #f9eded;
     padding: 15px 0px;
-    border:1px solid #699053;
     border-radius: 5px;
-    margin-bottom: 10px;
-    color: red;
+    color:black;
+}
+.btn-login-mg{
+    margin-left: 175px;
+    width: 100px;
+    color:white;
+    height: 40px;
+    background-color:rgb(73, 4, 103);
+    border:0;
+    border-radius:30px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all .3s;
+    padding:0px 10px;
 }
 .submit1{
     width: 100%;
