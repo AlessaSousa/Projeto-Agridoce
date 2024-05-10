@@ -1,0 +1,24 @@
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+        font-family: 'Abel';
+}
+.logo {
+    text-align: center;
+    margin-left: 20px ;
+    margin-top: 20px;
+    height: 38px;
+    width: 140px;
+    font-size: 27px;
+    padding: 0 10px;
+    border: 2px solid black;
+    outline: none;
+
+}
+.logo a{
+    font-family: 'Kelly Slab';
+    text-decoration: none;
+    color: black;
+}

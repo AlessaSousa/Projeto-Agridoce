@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Abel&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Kelly+Slab&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="logo">AGRIDOCE</div>
+    <div class="logo"><a href="index.php">AGRIDOCE</a></div>
 
       <div class="container1">
         <div class="box1 form-box1">
@@ -79,7 +79,6 @@ if(isset($_POST['submit'])){
 } else {
 
 ?>
-
 
             <form action="" method="post">
                 <div class="field1 input1">

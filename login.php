@@ -18,8 +18,8 @@
 </head>
 <body>    
   
-    <div class="logo">AGRIDOCE</div>
-  
+<div class="logo"><a href="index.php">AGRIDOCE</a></div>
+
     <div class="container"> 
        <div class="container-bv">
         <div class="box-bv form-box-bv">

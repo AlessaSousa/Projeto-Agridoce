@@ -32,7 +32,7 @@ header{
     text-align: center;
 }
 
-.container-bv{
+.container-bv{ 
     display:flex;
     align-items:left;
     justify-content: left;
@@ -40,6 +40,7 @@ header{
 }
 
 .box-bv{
+
     background: #fdfdfd;
     display: inline-block;
     flex-direction: column;
