@@ -6,11 +6,12 @@
         font-family: 'Abel';
 }
 .logo {
+    display: flex;
     text-align: center;
     margin-left: 20px ;
     margin-top: 20px;
-    height: 38px;
-    width: 140px;
+    height: 35px;
+    width: 120px;
     font-size: 27px;
     padding: 0 10px;
     border: 2px solid black;

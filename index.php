@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AGRIDOCE</title>
-    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/indexStyle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
@@ -16,9 +16,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abel&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Kelly+Slab&display=swap" rel="stylesheet">
 </head>
-<body>    
+<body>
+    <img src="bottom-view-cut-vegetables-wooden-spoon-cinnamon-sticks-other-stuffs-grey-table-with-free-space.jpg">
   
 <div class="logo"><a href="index.php">AGRIDOCE</a></div>
+
+<div class="nav">
+        <div class="link-nav">
+            <a href="login.php">ENTRAR</a>
+        </div>
+        <div class="link-nav">
+            <a href="cadastro.php">CADASTRO</a>
+        </div>
+</div>
 
     <div class="container"> 
        <div class="container-bv">

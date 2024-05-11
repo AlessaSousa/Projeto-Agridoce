@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AGRIDOCE</title>
-    <link rel="stylesheet" href="style/cadastroStyle.css">
+    <link rel="stylesheet" href="style/cadastro.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
 </head>
 <body>
     <div class="logo"><a href="index.php">AGRIDOCE</a></div>
-
+   
       <div class="container1">
         <div class="box1 form-box1">
         <header>CADASTRO</header>
