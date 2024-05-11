@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Abel&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Kelly+Slab&display=swap" rel="stylesheet">
 </head>
 <body>
-    <img src="bottom-view-cut-vegetables-wooden-spoon-cinnamon-sticks-other-stuffs-grey-table-with-free-space.jpg">
+    <img src="imagem/bottom-view-cut-vegetables-wooden-spoon-cinnamon-sticks-other-stuffs-grey-table-with-free-space.jpg">
   
 <div class="logo"><a href="index.php">AGRIDOCE</a></div>
 
