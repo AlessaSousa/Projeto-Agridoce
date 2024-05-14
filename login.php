@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         if ($rows == 1) {
             $_SESSION['email'] = $email;
-            header("Location: post.php");
+            header("Location: perfil.php");
             exit(); // Adicionei exit para encerrar o script após o redirecionamento
         } else {
             echo "<script>

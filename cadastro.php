@@ -70,10 +70,14 @@ if(isset($_POST['submit'])){
         } else {
             mysqli_query($con,"INSERT INTO usuario(nome ,email, senha) VALUES('$nome','$email','$senha')") or die("Houve um erro");
 
+            $_SESSION['nome'] = $nome;
+            $_SESSION['email'] = $email;
+
             echo "<div class='message'>
                       <p>Cadastro concluído!</p>
                   </div> <br>";
             echo "<a href='login.php'><button class='btn-login mg'>Login</button>";
+        
         }
     }
 } else {
