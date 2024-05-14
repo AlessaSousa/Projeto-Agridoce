@@ -5,8 +5,12 @@
     box-sizing:border-box;
         font-family: 'Abel';
 }
+
 .logo{
+    position: relative;
     display: flex;
+    z-index: 1;    
+    outline: none;
     text-align: center;
     margin-left: 20px ;
     margin-top: 20px;
@@ -15,9 +19,12 @@
     font-size: 27px;
     padding: 0 10px;
     border: 2px solid black;
-    outline: none;
+    position: fixed;
+    top: 20px;
+    left: 10px;
 
 }
+
 .logo a{
     font-family: 'Kelly Slab';
     text-decoration: none;
@@ -28,26 +35,16 @@ p{
     font-size: 20px;
 }
 header{
-    font-size:30px;
+    margin-top: 20px;
+    font-size:50px;
     text-align: center;
 }
-.container{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    min-height:90vh;
-}
-
 .box{
     background: #fdfdfd;
     display: inline-block;
     flex-direction: column;
     padding: 25px 25px;
-    box-shadow: 0 0 100px 0 rgb(148, 98, 169),
+    box-shadow: 0 0 60px 0 rgb(148, 98, 169),
                  0 32px 64px -48px rgba(148, 98, 169);
 }
 .form-box{
@@ -75,6 +72,8 @@ header{
     outline: none;
 }
 .btn{
+    position: relative;
+    z-index: 1;
     background-color: rgba(186, 172, 247, 0.5);
     margin-left: 20px;
     text-align: center;
@@ -86,6 +85,9 @@ header{
     border-radius: 15%;
     border: none;
     cursor:pointer;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
 }
 .submit{
     width: 100%;
@@ -94,9 +96,21 @@ header{
     text-align: center;
     margin-bottom: 15px;
 }
+.box-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: rgba(186, 172, 247);
+    z-index: 0;
+}
 
+.content {
+    margin-left: 200px; 
+    padding: 20px;
+}
 
- /*----------------- Perfil ------------*/
  .nav{
     position: absolute;
     top: 20px;
@@ -110,16 +124,22 @@ header{
  .right-links{
     padding: 0 10px;
  }
+ label{
+    font-size: 35px;
+    margin-left: 20px;
+ }
+
  main{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 60px;
+    align-items: left;
+    justify-content:center;
+    margin-top: 20px;
+    
  }
  .main-box{
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 40%;
  }
  .main-box .top{
     display: flex;
@@ -127,7 +147,7 @@ header{
     justify-content: space-around;
  }
  .box{
-    margin: 20px;;
+    margin: 20px;
  }
 @media only screen and (max-width:840px){
     .main-box .top{
@@ -141,4 +161,34 @@ header{
     .bottom{
         margin-top: 0;
     }
+}
+#perfilFotoInput {
+    display: none;
+}
+
+.perfil-foto {
+    text-align: center;
+    position: fixed;
+    top: 60px;
+    right: 60px;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    z-index: 1;
+    background-color: rgba(186, 172, 247);
+    padding: 5px 10px;
+    border-radius: 100%;
+
+}
+.svg{    
+    margin-right: 20px;
+    cursor: pointer;
+    margin-top: 90px;
+    color: rgb(73, 4, 103, 0.5);
+}
+
+.perfil-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
