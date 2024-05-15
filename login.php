@@ -27,7 +27,7 @@
     <form method="post" onsubmit="return validarForm()">
         <div class="field input">
             <label for="email">E-mail</label>
-            <input type="text" name="email" id="email" required>
+            <input type="email" name="email" id="email" required>
 
         </div>
         <div class="field input">
@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         if ($rows == 1) {
             $_SESSION['email'] = $email;
-            header("Location: perfil.php");
+            header("Location: feed.php");
             exit(); // Adicionei exit para encerrar o script após o redirecionamento
         } else {
             echo "<script>

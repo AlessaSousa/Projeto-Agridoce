@@ -92,7 +92,7 @@ if(isset($_POST['submit'])){
 
                 <div class="field1 input1">
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="email" autocomplete="off" required>
+                    <input type="email" name="email" id="email" autocomplete="off" required>
                 </div>
 
                 <div class="field1 input1">
