@@ -10,7 +10,7 @@ $resultado = mysqli_query($con, $query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AGRIDOCE</title>
-    <link rel="stylesheet" href="style/feed.css">
+    <link rel="stylesheet" href="style/receita.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
@@ -27,25 +27,12 @@ $resultado = mysqli_query($con, $query);
     </div>
 
 <div class="logo"><a href="login.php">AGRIDOCE</a></div>
-       
-
-
-     <div class="icon-perfil">
-            <a href ="perfil.php">
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-         <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-        </svg></a>
+<div class="icon-voltar">
+            <a href ="feed.php">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-90deg-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708z"/>
+</svg></a>
         </div>        
-
-        <div class="pub"><a href="publicacao.php">
-            Publique sua receita <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-chat-left-heart" viewBox="0 0 16 16">
-            <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-            <path d="M8 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
-            </svg></a>
-        </div> 
-   
-
 
     <script>
         function abrirReceita(url) {
@@ -59,14 +46,13 @@ $resultado = mysqli_query($con, $query);
     -->
             <?php while ($post = mysqli_fetch_assoc($resultado)): ?>
                 <div class="card">
-                    <a href="receita.php">Link temporário</a>
                 <div class="post">
-                    <p>Postada por <?php echo htmlspecialchars($post['nome']); ?></p>
-                    <!--<p><?php echo nl2br(htmlspecialchars($post['descricao'])); ?></p>-->
-                    <?php if ($post['foto']): ?>
-                        <img src="<?php echo $post['foto']; ?>" alt="Post Image" style="max-width: 500px;">
+                <p>Postada por <b> <?php echo htmlspecialchars($post['nome']); ?></b></p>
                         <h2><?php echo htmlspecialchars($post['titulo']); ?></h2>
-                            <?php endif; ?>
+                   <!--  <?php if ($post['foto']): ?>
+                        <img src="<?php echo $post['foto']; ?>" alt="Post Image" style="max-width: 500px;">
+                            <?php endif; ?><br>-->
+                            <?php echo nl2br(htmlspecialchars($post['descricao'])); ?></p>
                 </div>
             </div>
             <?php endwhile; ?>

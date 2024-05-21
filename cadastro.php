@@ -57,7 +57,7 @@ if(isset($_POST['submit'])){
         echo "<div class='message'>
                   <p>A confirmação de senha não corresponde à senha digitada. Tente novamente.</p>
               </div> <br>";
-        echo "<a href='javascript:self.history.back()'><button class='btn-login mg'>Volte</button>";
+        echo "<a href='javascript:self.history.back()'><button class='btn-login-mg'>Volte</button>";
     } else {
         // Verificação de e-mail único
         $verify_query = mysqli_query($con,"SELECT email FROM usuario WHERE email='$email'");
@@ -76,7 +76,7 @@ if(isset($_POST['submit'])){
             echo "<div class='message'>
                       <p>Cadastro concluído!</p>
                   </div> <br>";
-            echo "<a href='login.php'><button class='btn-login mg'>Login</button>";
+            echo "<a href='login.php'><button class='btn-login-mg'>Login</button>";
         
         }
     }

@@ -41,7 +41,7 @@
         </div>
         <div class="links">
             Você não tem uma conta? <a href="cadastro.php">Cadastre-se</a><br>
-            Esqueceu a senha? <a href="alterarSenha.php">Alterar senha</a>
+            Deseja alterar a senha? <a href="alterarSenha.php">Alterar</a>
         </div>
     </form>
     </div>
@@ -81,7 +81,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $rows = mysqli_num_rows($result);
         
         if ($rows == 1) {
+            $user = mysqli_fetch_assoc($result);
             $_SESSION['email'] = $email;
+            $_SESSION['nome'] = $user['nome'];
+            $_SESSION['cod'] = $user['cod'];
             header("Location: feed.php");
             exit(); // Adicionei exit para encerrar o script após o redirecionamento
         } else {
