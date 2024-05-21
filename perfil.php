@@ -56,13 +56,15 @@
         </div>
         </div>
 
-
+    <!-- formulário para inserção de receitas novas
+         o css é com a alê emoji joinha
+    -->
     <div class="container-p">
         <div class="box-p form-box-p">
         <h2>Publique sua receita</h2><br>
-        <form action="postar_receita.php" method="POST">
+        <form action="postar_receita.php" method="POST" enctype="multipart/form-data">
         <div class="field-p input-p">
-            <input type="text" id="titulo" placeholder="Título" oninput="resizeInput()" required>
+        <input type="text" name="titulo" placeholder="Título" oninput="resizeInput()" required>
         </div>
         <br>
         <textarea name="descricao" id="descricao" placeholder="Insira a descrição da receita" required></textarea>

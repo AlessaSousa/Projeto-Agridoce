@@ -87,20 +87,23 @@ $resultado = mysqli_query($con, $query);
             window.location.href = url;
         }
     </script>
-        <div class="container">
-            <div class="card">
+    <!-- script pra inserir as receitas num loop while
+         basicamente, quando uma receita é feito no perfil.php
+         a receita vai pro banco de dados e uma query é feita
+         no início da página pra resgatar os posts e exibí-los aqui
+    -->
             <?php while ($post = mysqli_fetch_assoc($resultado)): ?>
+            <div class="card">
                 <div class="post">
                     <h2><?php echo htmlspecialchars($post['titulo']); ?></h2>
-                    <p>Postada por <?php echo htmlspecialchars($post['autor']); ?></p>
+                    <p>Postada por <?php echo htmlspecialchars($post['nome']); ?></p>
                     <p><?php echo nl2br(htmlspecialchars($post['descricao'])); ?></p>
-                    <?php if ($post['imagem']): ?>
-                        <img src="<?php echo $post['imagem']; ?>" alt="Post Image" style="max-width: 500px;">
+                    <?php if ($post['foto']): ?>
+                        <img src="<?php echo $post['foto']; ?>" alt="Post Image" style="max-width: 500px;">
                     <?php endif; ?>
                 </div>
-                <?php endwhile; 
-            ?>
             </div>
+            <?php endwhile; ?>
         </div>
       </div>
     </div>
