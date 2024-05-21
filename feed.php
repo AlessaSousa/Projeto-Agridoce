@@ -1,7 +1,7 @@
 <?php
 session_start();
 include ("conexao.php");
-$query = "SELECT receita.*, usuario.nome FROM receita JOIN usuario ON receita.autor = usuario.cod ORDER BY receita.rec_cod DESC";
+$query = "SELECT titulo, nome, foto, descricao FROM receita inner join usuario on autor = cod ORDER BY receita.rec_cod DESC";
 $resultado = mysqli_query($con, $query);
 ?>
 <!DOCTYPE html>
