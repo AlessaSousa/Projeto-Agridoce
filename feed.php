@@ -1,3 +1,9 @@
+<?php
+session_start();
+include ("conexao.php");
+$query = "SELECT receita.*, usuario.nome FROM receita JOIN usuario ON receita.autor = usuario.cod ORDER BY receita.rec_cod DESC";
+$resultado = mysqli_query($con, $query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +24,6 @@
 </head>
 <body>
     <div class="box-top">
-
     </div>
 
 <div class="logo"><a href="login.php">AGRIDOCE</a></div>
@@ -81,31 +86,23 @@
         function abrirReceita(url) {
             window.location.href = url;
         }
-        <?php
-          include "conexao.php";
-          $dest = "SELECT * FROM receita WHERE recnome, recingrediente";
-          $result = mysqli_query($con, $dest);                
-              while ($r = mysqli_fetch_array($result)) {
-                $reccod = $r['reccod'];
-                $recnome = $r['recnome'];
-          ?>
     </script>
         <div class="container">
-        <div class="card">
-          <h2> <?php echo $r['recnome'] ?></h2>
-          <img src="<?php echo $r['link'] ?>" alt="cursovideophp" width="320" height="200"/>
-          <p style="text-align: justify;" class="card-text"><?php echo $r['recingrediente'] ?></p>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-            <?php echo '<a href="post.php?receita='.$recnome.'&id='.$reccod.'';?>" ><button type="button" class="btn">Visualizar</button></a>
-            <a href="perfil.php"><button type="button" class="btn btn">Inscreva-se</button></a>
-             
+            <div class="card">
+            <?php while ($post = mysqli_fetch_assoc($resultado)): ?>
+                <div class="post">
+                    <h2><?php echo htmlspecialchars($post['titulo']); ?></h2>
+                    <p>Postada por <?php echo htmlspecialchars($post['autor']); ?></p>
+                    <p><?php echo nl2br(htmlspecialchars($post['descricao'])); ?></p>
+                    <?php if ($post['imagem']): ?>
+                        <img src="<?php echo $post['imagem']; ?>" alt="Post Image" style="max-width: 500px;">
+                    <?php endif; ?>
+                </div>
+                <?php endwhile; 
+            ?>
             </div>
         </div>
       </div>
     </div>
-    <?php    
-                 }
-              ?>
 </body>
 </html>
