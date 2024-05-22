@@ -41,7 +41,7 @@
         </div>
         <div class="links">
             Você não tem uma conta? <a href="cadastro.php">Cadastre-se</a><br>
-            Esqueceu a senha? <a href="alterarSenha.php">Alterar senha</a>
+            Deseja alterar a senha? <a href="alterarSenha.php">Alterar</a>
         </div>
     </form>
     </div>

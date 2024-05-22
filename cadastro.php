@@ -60,7 +60,7 @@ if(isset($_POST['submit'])){
         echo "<div class='message'>
                   <p>A confirmação de senha não corresponde à senha digitada. Tente novamente.</p>
               </div> <br>";
-        echo "<a href='javascript:self.history.back()'><button class='btn-login mg'>Volte</button>";
+        echo "<a href='javascript:self.history.back()'><button class='btn-login-mg'>Volte</button>";
     } else {
          // Check if email is unique
          $query = "SELECT email FROM usuario WHERE email=?";

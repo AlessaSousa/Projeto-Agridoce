@@ -1,0 +1,109 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+        font-family: 'Abel';
+}
+
+.logo{
+    position: absolute;
+    display: flex;
+    outline: none;
+    text-align: center;
+    height: 35px;
+    width: 140px;
+    font-size: 27px;
+    padding: 0 10px;
+    border: 2px solid black;
+    position: fixed;
+    top: 20px;
+    left: 10px;
+
+}
+
+.logo a{
+    font-family: 'Kelly Slab';
+    text-decoration: none;
+    color: black;
+}
+p{
+    font-size: 35px;
+    margin-left: 20px;
+}
+header{
+    margin-top: 20px;
+    font-size:50px;
+    text-align: center;
+}
+.container-p{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    min-height:90vh;
+}
+
+.box-p{ 
+    background: #fdfdfd;
+    display: inline-block;
+    flex-direction: column;
+    padding: 25px 25px;
+    box-shadow: 0 0 15px 0 rgb(148, 98, 169),
+                 0 32px 40px -48px rgba(148, 98, 169);
+
+}
+.form-box-p{
+    background-color: rgb(250, 250, 250);
+    height:600px;
+    width: 600px;
+    margin: 20px;
+}
+.form-box-p form .input-p input{
+    text-align: center;
+    height: 60px ;
+    width: 550px;
+    font-size: 30px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+.form-box-p form .field-p {
+    align-items: center;
+    display:flex;
+    flex-direction:column;
+    outline: none;
+    display: inline;
+}
+
+.field-p textarea{
+    position: absolute;
+    text-align: left;
+    height: 550px ;
+    width: 550px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.btn-login{
+    position: absolute;
+    display: flex;
+    flex-direction: flex;
+    align-items: right;
+    justify-content: right;
+    width: 40px;
+    color:white;
+    height: 40px;
+    background-color:rgb(73, 4, 103);
+    border:0;
+    border-radius:25%;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all .3s;
+    margin-left: 500px;
+    padding:10px;
+    top:50px;
+}

@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $descricao = mysqli_real_escape_string($con, $_POST['descricao']);
     $imagem = '';
 
-    // função pra fazer o diretório uploads (pra onde vão as imagens de receitas) existir caso não tenha na sua máquina
+    // função pra fazer o diretório uploads existir caso não tenha na sua máquina
     $upload_dir = 'uploads';
     if (!is_dir($upload_dir)) {
         mkdir($upload_dir, 0755, true);

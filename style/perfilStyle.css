@@ -146,6 +146,7 @@ header{
  }
  .box{
     margin: 20px;
+    font-size: 25px;
  }
 @media only screen and (max-width:840px){
     .main-box .top{
@@ -195,7 +196,6 @@ header{
 .container-p{
     display: flex;
     margin-top:30px;
-    margin-left: 200px;
     display:flex;
 
     min-height:90vh;
@@ -218,26 +218,34 @@ header{
     text-align: center;
     height: 60px ;
     width: 400px;
-    font-size: 16px;
-    border-radius:30px;
+    font-size: 20px;
     border: 1px solid #ccc;
     outline: none;
 }
 .form-box-p form .field-p {
     align-items: center;
     display:flex;
-
     flex-direction:column;
     outline: none;
     display: inline;
 }
+
+.field-p textarea{
+    text-align: center;
+    height: 60px ;
+    width: 400px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
 
 .btn-login{
     position: absolute;
     display: flex;
     flex-direction: row;
     align-items: right;
-    justify-content: space-between;
+    justify-content: right;
     width: 40px;
     color:white;
     height: 40px;
@@ -247,6 +255,6 @@ header{
     font-size: 15px;
     cursor: pointer;
     transition: all .3s;
-    margin: 10px;
+    margin-left: 350px;
     padding:10px;
 }
