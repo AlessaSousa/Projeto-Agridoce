@@ -1,7 +1,7 @@
 <?php
 session_start();
 include ("conexao.php");
-$query = "SELECT titulo, nome, foto, descricao FROM receita inner join usuario on autor = cod ORDER BY receita.rec_cod DESC";
+$query = "SELECT rec_cod, titulo, nome, foto, descricao FROM receita inner join usuario on autor = cod ORDER BY receita.rec_cod DESC";
 $resultado = mysqli_query($con, $query);
 ?>
 <!DOCTYPE html>
@@ -45,7 +45,7 @@ $resultado = mysqli_query($con, $query);
          no início da página pra resgatar os posts e exibí-los aqui
     -->
             <?php while ($post = mysqli_fetch_assoc($resultado)): ?>
-                <div class="card">
+                <div class="card" id="<?php echo $post['rec_cod']; ?>">
                 <div class="post">
                 <p>Postada por <b> <?php echo htmlspecialchars($post['nome']); ?></b></p>
                         <h2><?php echo htmlspecialchars($post['titulo']); ?></h2>

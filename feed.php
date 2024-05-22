@@ -1,7 +1,7 @@
 <?php
 session_start();
 include ("conexao.php");
-$query = "SELECT titulo, nome, foto, descricao FROM receita inner join usuario on autor = cod ORDER BY receita.rec_cod DESC";
+$query = "SELECT rec_cod, titulo, nome, foto, descricao FROM receita inner join usuario on autor = cod ORDER BY receita.rec_cod DESC";
 $resultado = mysqli_query($con, $query);
 ?>
 <!DOCTYPE html>
@@ -59,7 +59,7 @@ $resultado = mysqli_query($con, $query);
     -->
             <?php while ($post = mysqli_fetch_assoc($resultado)): ?>
                 <div class="card">
-                    <a href="receita.php">Link temporário</a>
+                    <a href="receita.php#<?php echo $post['rec_cod']; ?>">Descrição</a>
                 <div class="post">
                     <p>Postada por <?php echo htmlspecialchars($post['nome']); ?></p>
                     <!--<p><?php echo nl2br(htmlspecialchars($post['descricao'])); ?></p>-->

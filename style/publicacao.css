@@ -79,9 +79,8 @@ header{
 }
 
 .field-p textarea{
-    position: absolute;
     text-align: left;
-    height: 550px ;
+    height: 350px ;
     width: 550px;
     font-size: 20px;
     border: 1px solid #ccc;
