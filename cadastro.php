@@ -52,6 +52,9 @@ if(isset($_POST['submit'])){
     $senha = $_POST['senha'];
     $confirmaSenha = $_POST['confirmaSenha']; // Novo campo para a confirmação de senha
 
+    //criptografia de senha
+    $senhacripto = password_hash($senha, PASSWORD_DEFAULT);
+
     // Verifique se a senha e a confirmação de senha são iguais
     if($senha !== $confirmaSenha){
         echo "<div class='message'>
@@ -59,30 +62,40 @@ if(isset($_POST['submit'])){
               </div> <br>";
         echo "<a href='javascript:self.history.back()'><button class='btn-login mg'>Volte</button>";
     } else {
-        // Verificação de e-mail único
-        $verify_query = mysqli_query($con,"SELECT email FROM usuario WHERE email='$email'");
-        
-        if(mysqli_num_rows($verify_query) != 0){
-            echo "<div class='message'>
-                      <p>Este e-mail já está cadastrado, use outro por favor!</p>
-                  </div> <br>";
-            echo "<a href='javascript:self.history.back()'><button class='btn-login-mg'>Volte</button>";
+         // Check if email is unique
+         $query = "SELECT email FROM usuario WHERE email=?";
+         $stmt = $con->prepare($query);
+         $stmt->bind_param('s', $email);
+         $stmt->execute();
+         $result = $stmt->get_result();
+ 
+         if ($result->num_rows != 0) {
+             echo "<div class='message'>
+                       <p>Este e-mail já está cadastrado, use outro por favor!</p>
+                   </div> <br>";
+             echo "<a href='javascript:self.history.back()'><button class='btn-login mg'>Volte</button></a>";
         } else {
-            mysqli_query($con,"INSERT INTO usuario(nome ,email, senha) VALUES('$nome','$email','$senha')") or die("Houve um erro");
+            $query = "INSERT INTO usuario (nome, email, senha) VALUES (?, ?, ?)";
+            $stmt = $con->prepare($query);
+            $stmt->bind_param('sss', $nome, $email, $senhacripto);
 
-            $_SESSION['nome'] = $nome;
-            $_SESSION['email'] = $email;
+            if ($stmt->execute()) {
+                $_SESSION['nome'] = $nome;
+                $_SESSION['email'] = $email;
 
-            echo "<div class='message'>
-                      <p>Cadastro concluído!</p>
-                  </div> <br>";
-            echo "<a href='login.php'><button class='btn-login mg'>Login</button>";
+                echo "<div class='message'>
+                          <p>Cadastro concluído!</p>
+                      </div> <br>";
+                echo "<a href='login.php'><button class='btn-login mg'>Login</button></a>";
         
+            }
         }
     }
 } else {
 
 ?>
+
+
 
             <form action="" method="post">
                 <div class="field1 input1">

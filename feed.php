@@ -99,7 +99,8 @@ $resultado = mysqli_query($con, $query);
                     <p>Postada por <?php echo htmlspecialchars($post['nome']); ?></p>
                     <p><?php echo nl2br(htmlspecialchars($post['descricao'])); ?></p>
                     <?php if ($post['foto']): ?>
-                        <img src="<?php echo $post['foto']; ?>" alt="Post Image" style="max-width: 500px;">
+                        <a href=""></a>
+                        <img src="<?php echo $post['foto']; ?>" alt="Post Image" style="max-height: 300px; max-width: 320px">
                     <?php endif; ?>
                 </div>
             </div>
