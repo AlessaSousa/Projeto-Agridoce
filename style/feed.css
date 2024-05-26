@@ -87,6 +87,7 @@ header{
 }
 .card{
     position: relative;
+    left: 50px;
     top: 120px;
     width: 300px;
     height: 300px;
