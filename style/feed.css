@@ -80,7 +80,7 @@ header{
     top: 0;
     left: 0;
     right:0;
-    width:1920px;
+    width:100%;
     height: 100px;
     background-color: rgba(186, 172, 247);
     z-index: 0;

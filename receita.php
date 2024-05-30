@@ -58,16 +58,12 @@ if (isset($_GET['receita']) && is_numeric($_GET['receita'])) {
             window.location.href = url;
         }
     </script>
-    <!-- script pra inserir as receitas num loop while
-         basicamente, quando uma receita é feito no perfil.php
-         a receita vai pro banco de dados e uma query é feita
-         no início da página pra resgatar os posts e exibí-los aqui
-    -->
+ 
     <div class="card">
         <div class="post">
-            <p>Postada por <b><?php echo htmlspecialchars($nome); ?></b></p>
+            <p>Postado por <b><?php echo htmlspecialchars($nome); ?></b></p>
             <h2><?php echo htmlspecialchars($titulo); ?></h2>
-            <img src="<?php echo htmlspecialchars($foto); ?>" alt="<?php echo htmlspecialchars($titulo); ?>" style="max-width: 500px;">
+            <img  class="img-receita" src="<?php echo htmlspecialchars($foto); ?>" alt="<?php echo htmlspecialchars($titulo); ?>" style="max-width: 300px;">
             <p><?php echo nl2br(htmlspecialchars($descricao)); ?></p>
         </div>
     </div>

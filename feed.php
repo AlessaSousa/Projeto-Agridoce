@@ -61,7 +61,7 @@ $resultado = mysqli_query($con, $query);
                 <div class="card">
                     <a href="receita.php?receita=<?php echo $post['rec_cod']; ?>">Descrição</a>
                 <div class="post">
-                    <p>Postada por <?php echo htmlspecialchars($post['nome']); ?></p>
+                    <p>Postado por <?php echo htmlspecialchars($post['nome']); ?></p>
                     <!--<p><?php echo nl2br(htmlspecialchars($post['descricao'])); ?></p>-->
                     <?php if ($post['foto']): ?>
                         <img src="<?php echo $post['foto']; ?>" alt="Post Image" style="max-width: 500px;">
