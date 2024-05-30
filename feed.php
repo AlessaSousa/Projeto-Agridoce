@@ -57,9 +57,9 @@ $resultado = mysqli_query($con, $query);
          a receita vai pro banco de dados e uma query é feita
          no início da página pra resgatar os posts e exibí-los aqui
     -->
-            <?php while ($post = mysqli_fetch_assoc($resultado)): ?>
+    <?php while ($post = mysqli_fetch_assoc($resultado)): ?>
                 <div class="card">
-                    <a href="receita.php#<?php echo $post['rec_cod']; ?>">Descrição</a>
+                    <a href="receita.php?receita=<?php echo $post['rec_cod']; ?>">Descrição</a>
                 <div class="post">
                     <p>Postada por <?php echo htmlspecialchars($post['nome']); ?></p>
                     <!--<p><?php echo nl2br(htmlspecialchars($post['descricao'])); ?></p>-->

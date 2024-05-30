@@ -1,9 +1,28 @@
 <?php
 session_start();
 include ("conexao.php");
-$query = "SELECT rec_cod, titulo, nome, foto, descricao FROM receita inner join usuario on autor = cod ORDER BY receita.rec_cod DESC";
-$resultado = mysqli_query($con, $query);
-?>
+if (isset($_GET['receita']) && is_numeric($_GET['receita'])) {
+    $receita = ($_GET['receita']); // Sanitize input by casting to integer
+
+    // Prepare SQL query
+    $query = "SELECT titulo, nome, foto, descricao FROM receita INNER JOIN usuario on autor = cod WHERE rec_cod = ?";
+    
+    // Prepare statement
+    if ($stmt = mysqli_prepare($con, $query)) {
+        // Bind parameters
+        mysqli_stmt_bind_param($stmt, "i", $receita);
+
+        // Execute query
+        mysqli_stmt_execute($stmt);
+
+        // Bind result variables
+        mysqli_stmt_bind_result($stmt, $titulo, $nome, $foto, $descricao);
+
+        // Fetch the result
+        if (mysqli_stmt_fetch($stmt)) {
+            // Close statement
+            mysqli_stmt_close($stmt);
+            ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,20 +63,25 @@ $resultado = mysqli_query($con, $query);
          a receita vai pro banco de dados e uma query é feita
          no início da página pra resgatar os posts e exibí-los aqui
     -->
-            <?php while ($post = mysqli_fetch_assoc($resultado)): ?>
-                <div class="card" id="<?php echo $post['rec_cod']; ?>">
-                <div class="post">
-                <p>Postada por <b> <?php echo htmlspecialchars($post['nome']); ?></b></p>
-                        <h2><?php echo htmlspecialchars($post['titulo']); ?></h2>
-                   <!--  <?php if ($post['foto']): ?>
-                        <img src="<?php echo $post['foto']; ?>" alt="Post Image" style="max-width: 500px;">
-                            <?php endif; ?><br>-->
-                            <?php echo nl2br(htmlspecialchars($post['descricao'])); ?></p>
-                </div>
-            </div>
-            <?php endwhile; ?>
+    <div class="card">
+        <div class="post">
+            <p>Postada por <b><?php echo htmlspecialchars($nome); ?></b></p>
+            <h2><?php echo htmlspecialchars($titulo); ?></h2>
+            <img src="<?php echo htmlspecialchars($foto); ?>" alt="<?php echo htmlspecialchars($titulo); ?>" style="max-width: 500px;">
+            <p><?php echo nl2br(htmlspecialchars($descricao)); ?></p>
         </div>
-      </div>
     </div>
 </body>
+<?php
+        } else {
+            echo "Receita não encontrada";
+        }
+    } else {
+        echo "Erro no SQL";
+    }
+} else {
+    echo "Receita com código inválido";
+
+}
+?>
 </html>
