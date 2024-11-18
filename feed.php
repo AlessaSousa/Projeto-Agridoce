@@ -51,14 +51,6 @@ $resultado = mysqli_query($con, $query);
         function abrirReceita(url) {
             window.location.href = url;
         }
-        <?php
-          include "conexao.php";
-          $dest = "SELECT * FROM receita WHERE recnome, recingrediente";
-          $result = mysqli_query($con, $dest);                
-              while ($r = mysqli_fetch_array($result)) {
-                $reccod = $r['reccod'];
-                $recnome = $r['recnome'];
-          ?>
     </script>
     <!-- script pra inserir as receitas num loop while
          basicamente, quando uma receita é feito no perfil.php
