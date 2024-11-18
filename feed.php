@@ -59,13 +59,13 @@ $resultado = mysqli_query($con, $query);
     -->
     <?php while ($post = mysqli_fetch_assoc($resultado)): ?>
                 <div class="card">
-                    <a href="receita.php?receita=<?php echo $post['rec_cod']; ?>">Descrição</a>
+                    <a href="receita.php?receita=<?php echo $post['rec_cod']; ?>">Receita (é um link)</a>
                 <div class="post">
                     <p>Postado por <?php echo htmlspecialchars($post['nome']); ?></p>
-                    <!--<p><?php echo nl2br(htmlspecialchars($post['descricao'])); ?></p>-->
                     <?php if ($post['foto']): ?>
                         <a href=""></a>
                         <img src="<?php echo $post['foto']; ?>" alt="Post Image" style="max-height: 300px; max-width: 320px">
+                        <h2><?php echo htmlspecialchars($post['titulo']); ?></h2>
                     <?php endif; ?>
                 </div>
             </div>
