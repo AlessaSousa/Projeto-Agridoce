@@ -67,7 +67,7 @@
 </script>
 
 <?php
-error_reporting(E_ALL); // Adicionei a configuração para exibir todos os erros
+error_reporting(E_ALL); // Enable error reporting
 require('conexao.php');
 session_start();
 
@@ -76,33 +76,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = $_POST['email'];
         $senha = $_POST['senha'];
         
-        $query = "SELECT * FROM usuario WHERE email='$email' AND senha='$senha'";
-        $result = mysqli_query($con, $query);
-        $rows = mysqli_num_rows($result);
-        
-        if ($rows == 1) {
-            $user = mysqli_fetch_assoc($result);
-            $_SESSION['email'] = $email;
-            $_SESSION['nome'] = $user['nome'];
-            $_SESSION['cod'] = $user['cod'];
-            header("Location: feed.php");
-            exit(); // Adicionei exit para encerrar o script após o redirecionamento
+        $query = "SELECT * FROM usuario WHERE email=?";
+        $stmt = $con->prepare($query);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows == 1) {
+            $user = $result->fetch_assoc();
+            if (password_verify($senha, $user['senha'])) {
+                $_SESSION['email'] = $email;
+                $_SESSION['nome'] = $user['nome'];
+                $_SESSION['cod'] = $user['cod'];
+                header("Location: feed.php");
+                exit(); // End the script after redirect
+            } else {
+                echo "<script>
+                alert('Senha incorreta. Tente novamente');
+                window.location='login.php';
+                </script>";
+                exit(); // End the script after redirect
+            }
         } else {
             echo "<script>
                 alert('Não foi possível entrar: E-mail ou senha estão errados, ou não existe!');
                 window.location='login.php';
                 </script>";
-            exit(); // Encerra o script após o redirecionamento
+            exit(); // End the script after redirect
         }
     } else {
         echo "<script>
             alert('Por favor, preencha todos os campos.');
             window.location='login.php';
             </script>";
-        exit(); // Encerra o script após o redirecionamento
+        exit(); // End the script after redirect
     }
 }
 ?>
+
 
 </body>
 </html>

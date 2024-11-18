@@ -51,6 +51,14 @@ $resultado = mysqli_query($con, $query);
         function abrirReceita(url) {
             window.location.href = url;
         }
+        <?php
+          include "conexao.php";
+          $dest = "SELECT * FROM receita WHERE recnome, recingrediente";
+          $result = mysqli_query($con, $dest);                
+              while ($r = mysqli_fetch_array($result)) {
+                $reccod = $r['reccod'];
+                $recnome = $r['recnome'];
+          ?>
     </script>
     <!-- script pra inserir as receitas num loop while
          basicamente, quando uma receita é feito no perfil.php
@@ -64,9 +72,9 @@ $resultado = mysqli_query($con, $query);
                     <p>Postado por <?php echo htmlspecialchars($post['nome']); ?></p>
                     <!--<p><?php echo nl2br(htmlspecialchars($post['descricao'])); ?></p>-->
                     <?php if ($post['foto']): ?>
-                        <img src="<?php echo $post['foto']; ?>" alt="Post Image" style="max-width: 500px;">
-                        <h2><?php echo htmlspecialchars($post['titulo']); ?></h2>
-                            <?php endif; ?>
+                        <a href=""></a>
+                        <img src="<?php echo $post['foto']; ?>" alt="Post Image" style="max-height: 300px; max-width: 320px">
+                    <?php endif; ?>
                 </div>
             </div>
             <?php endwhile; ?>
